@@ -1,14 +1,7 @@
-myfile = open("helloworld.txt")
-print(myfile.read())
-myfile.seek(0)
-print(myfile.readlines())
-myfile.close()
+list = [1,2,3,4,5,6,7,8,9,10]
 
-with open("helloworld.txt", mode="r") as myfile:
-    print(myfile.read())
-
-with open("helloworld.txt", mode="a") as myfile:
-    print(myfile.write("\ntercera linea"))
-
-with open("helloworld.txt", mode="r") as myfile:
-    print(myfile.read())
+for num in list:
+    if num % 2 == 0:
+        print(f"Num {num} is even")
+    else:
+        print("Num {} is odd".format(num))
