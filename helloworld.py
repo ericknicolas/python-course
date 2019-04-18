@@ -16,3 +16,6 @@ for a,b in my_list:
 d = {"k1": 1, "k2": 2, "k3": 3}
 for key, value in d:
     print(key)
+
+for _, value in d:
+    print(value)
