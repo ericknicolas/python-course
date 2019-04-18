@@ -1,21 +1,9 @@
-list = [1,2,3,4,5,6,7,8,9,10]
+from random import shuffle
 
-for num in list:
-    if num % 2 == 0:
-        print(f"Num {num} is even")
-    else:
-        print("Num {} is odd".format(num))
+my_list = [1,2,3,4,5,6,7,8,9,10]
+print(my_list)
+shuffle(my_list)
+print(my_list)
 
-for letter in "Hello World":
-    print(letter)
-
-my_list = [(0,1),(2,3),(4,5)]
-for a,b in my_list:
-    print(a)
-
-d = {"k1": 1, "k2": 2, "k3": 3}
-for key, value in d:
-    print(key)
-
-for _, value in d:
-    print(value)
+from random import randint
+print(randint(0,10))
