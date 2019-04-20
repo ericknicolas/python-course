@@ -1,5 +1,0 @@
-archivo de texto primera linea
-archivo de texto segunda lineatercera lineatercera lineatercera linea
-tercera linea
-tercera linea
-tercera linea
