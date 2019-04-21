@@ -1,14 +1,16 @@
-#ALMOST THERE: Given an integer n, return True if n is within 10 of either 100 or 200
-#   almost_there(90) --> True
-#   almost_there(104) --> True
-#   almost_there(150) --> False
-#   almost_there(209) --> True
-#NOTE: abs(num) returns the absolute value of a numbe
+# FIND 33:
+# Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
+#   has_33([1, 3, 3]) → True
+#   has_33([1, 3, 1, 3]) → False
+#   has_33([3, 1, 3]) → False
 
-def almost_there(n):
-    return ((abs(100 - n)) <= 10 or (abs(200-n)) <=10)
+def has_33(nums):
+    for index, num in enumerate(nums):
+        if num == 3:
+            return num == nums[index + 1]
+    
+    return False
 
-# Check
-print(almost_there(104))
-print(almost_there(150))
-print(almost_there(209))
+print(has_33([1, 3, 3]))
+print(has_33([1, 3, 1, 3]))
+print(has_33([3, 1, 3]))
