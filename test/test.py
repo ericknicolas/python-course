@@ -1,16 +1,15 @@
-# FIND 33:
-# Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
-#   has_33([1, 3, 3]) → True
-#   has_33([1, 3, 1, 3]) → False
-#   has_33([3, 1, 3]) → False
+# PAPER DOLL: Given a string, return a string where for every character in the original there are three characters
+#   paper_doll('Hello') --> 'HHHeeellllllooo'
+#   paper_doll('Mississippi') --> 'MMMiiissssssiiippppppiii'
 
-def has_33(nums):
-    for index, num in enumerate(nums):
-        if num == 3:
-            return num == nums[index + 1]
+def paper_doll(text):
     
-    return False
+    newText = ""
 
-print(has_33([1, 3, 3]))
-print(has_33([1, 3, 1, 3]))
-print(has_33([3, 1, 3]))
+    for letter in text:
+        newText += letter * 3
+    
+    return newText
+
+print(paper_doll('Hello'))
+print(paper_doll('Mississippi'))
