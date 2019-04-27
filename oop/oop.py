@@ -1,23 +1,21 @@
-class Animal():
+class Dog():
 
-    def __init__(self):
-        print("animal created")
+    def __init__(self, name):
+        self.name = name
     
-    def who_am_i(self):
-        print("I'm an animal")
+    def speak(self):
+        return self.name + " says woof!"
 
-    def eat(self):
-        print("I'm eating")
+class Cat():
 
-class Dog(Animal):
-
-    def __init__(self):
-        Animal.__init__(self)
-        print("dog created")
+    def __init__(self, name):
+        self.name = name
     
-    def bark(self):
-        print("wooof!")
+    def speak(self):
+        return self.name + " says meow!"
 
+niko = Dog(name = "niko")
+felix = Cat(name = "felix")
 
-my_dog = Dog()
-my_dog.eat()
+for pet in [niko,felix]:
+    print(pet.speak())
