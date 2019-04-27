@@ -18,7 +18,7 @@ def symbolSelection():
     global playerTwo
 
     while True:
-        playerOne = input("Please choose if you want to play with 'X' symbol or 'O' symbol?: ")
+        playerOne = input("Please choose if you want to play with 'X' symbol or 'O' symbol?: ").upper()
 
         if(playerOne == "X"):
             playerTwo = "O"
@@ -29,7 +29,11 @@ def symbolSelection():
             break
 
         else:
-            print("Not a valid symbol!")  
+            print("Not a valid symbol!")
+
+
+def is_empty(position):
+    return (board[position - 1] == " ")
 
 
 def playerSelection(player):
@@ -37,7 +41,7 @@ def playerSelection(player):
     while True:
         playerSelection = int(input("Please introduce your slection: "))
         
-        if((playerSelection in list(range(1,10))) and (board[playerSelection - 1] == " ")):
+        if((playerSelection in list(range(1,10))) and (is_empty(playerSelection))):
             board[playerSelection - 1] = player
             break
         else:
@@ -48,16 +52,10 @@ def playerSelection(player):
 
 def winner():
 
-    if((board[0] == board[1] == board[2] != " ") or (board[3] == board[4] == board[5] != " ") or (board[6] == board[7] == board[8] != " ")):
-        return True
-    
-    if((board[0] == board[3] == board[6] != " ") or (board[1] == board[4] == board[7] != " ") or (board[2] == board[5] == board[8] != " ")):
-        return True
-    
-    if((board[0] == board[4] == board[8] != " ") or (board[6] == board[4] == board[2] != " ")):
-        return True
-
-    return False
+    return  (
+        ((board[0] == board[1] == board[2] != " ") or (board[3] == board[4] == board[5] != " ") or (board[6] == board[7] == board[8] != " ")) or 
+        ((board[0] == board[3] == board[6] != " ") or (board[1] == board[4] == board[7] != " ") or (board[2] == board[5] == board[8] != " ")) or
+        ((board[0] == board[4] == board[8] != " ") or (board[6] == board[4] == board[2] != " ")))
 
 
 def game():
