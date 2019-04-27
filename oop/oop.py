@@ -1,24 +1,19 @@
-class Animal():
+class Book():
+
+    def __init__(self, title, author, pages):
+        
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def __str__(self):
+        return (f"{self.title} by {self.author}")
     
-    def __init__(self, name):
-        self.name = name
+    def __len__(self):
+        return (self.pages)
     
-    def speak(self):
-        raise NotImplementedError("Subclass must implement this abstract method")
+    def __del__(self):
+        print("object is deleted")
 
-
-class Dog(Animal):
-    
-    def speak(self):
-        return self.name + " says woof!"
-
-class Cat(Animal):
-
-    def speak(self):
-        return self.name + " says meow!"
-
-niko = Dog(name = "niko")
-felix = Cat(name = "felix")
-
-for pet in [niko,felix]:
-    print(pet.speak())
+b = Book("Game of Thrones", "Martin", 350)
+print(len(b))
