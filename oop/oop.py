@@ -1,16 +1,19 @@
-class Dog():
-
+class Animal():
+    
     def __init__(self, name):
         self.name = name
     
     def speak(self):
+        raise NotImplementedError("Subclass must implement this abstract method")
+
+
+class Dog(Animal):
+    
+    def speak(self):
         return self.name + " says woof!"
 
-class Cat():
+class Cat(Animal):
 
-    def __init__(self, name):
-        self.name = name
-    
     def speak(self):
         return self.name + " says meow!"
 
