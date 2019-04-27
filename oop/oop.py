@@ -1,14 +1,23 @@
-class Circle():
+class Animal():
 
-    #attributes
-    pi = 3.14
-
-    def __init__(self, radius = 1):
-        
-        self.radius = radius
+    def __init__(self):
+        print("animal created")
     
-    def get_circunference(self):
-        return (2 * self.pi * self.radius)
+    def who_am_i(self):
+        print("I'm an animal")
 
-circle = Circle(radius = 2)
-print(circle.get_circunference())
+    def eat(self):
+        print("I'm eating")
+
+class Dog(Animal):
+
+    def __init__(self):
+        Animal.__init__(self)
+        print("dog created")
+    
+    def bark(self):
+        print("wooof!")
+
+
+my_dog = Dog()
+my_dog.eat()
