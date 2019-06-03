@@ -1,11 +1,32 @@
 '''
 BlackJack game
 '''
-from deck import Deck
+import os
+from game import Game
 
-suits = ["Hearts", "Diamonds", "Spades", "Clubs"]
-ranks = ["Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"]
+#clear screen
+os.system("clear")
 
-deck = Deck(suits, ranks)
-deck.shuffle()
-print(deck)
+game = Game()
+game.start()
+print(game)
+
+while game.player_turn:
+    game.hit_or_stand()
+
+if not game.player.is_busts():
+    game.computer_turn()
+    print(game)
+
+    if(game.dealer.hand.value > 21):
+        print("computer busts!\n")
+
+    elif(game.player.hand.value > game.dealer.hand.value):
+        print("you win!\n")
+        
+    
+    elif(game.player.hand.value < game.dealer.hand.value):
+        print("you lose!\n")
+    
+else:
+    print("player busts!")
