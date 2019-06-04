@@ -1,18 +1,15 @@
-# SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order¶
-#   spy_game([1,2,4,0,0,7,5]) --> True
-#   spy_game([1,0,2,4,0,5,7]) --> True
-#   spy_game([1,7,2,0,4,5,0]) --> False
+def new_decorator(original_func):
+    def wrap_func():
+        print("extra code before original func")
+        original_func()
+        print("extra code after original func")
+    return wrap_func
 
-def spy_game(nums):
+@new_decorator
+def func_needs_decortaor():
+  print("func need decorator")
 
-    spy = ""
+#decorated_func = new_decorator(func_needs_decortaor)
+#decorated_func()
 
-    for num in nums:
-        if (num == 0 or num == 7):
-            spy += str(num)
-    
-    return spy == "007"
-
-print(spy_game([1,2,4,0,0,7,5]))
-print(spy_game([1,0,2,4,0,5,7]))
-print(spy_game([1,7,2,0,4,5,0]))
+func_needs_decortaor()
