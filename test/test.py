@@ -1,15 +1,24 @@
-def new_decorator(original_func):
-    def wrap_func():
-        print("extra code before original func")
-        original_func()
-        print("extra code after original func")
-    return wrap_func
+def gen_fibon(n):
+    a = 1
+    b = 1
+    output = []
 
-@new_decorator
-def func_needs_decortaor():
-  print("func need decorator")
+    for i in range(n):
+        output.append(a)
+        a,b = b,a+b
+    
+    return output
 
-#decorated_func = new_decorator(func_needs_decortaor)
-#decorated_func()
+def gen_fibon_generator(n):
+    a = 1
+    b = 1
 
-func_needs_decortaor()
+    for i in range(n):
+        yield a
+        a,b = b,a+b
+
+for number in gen_fibon(10):
+    print(number)
+
+for number in gen_fibon_generator(10):
+    print(number)
