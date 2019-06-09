@@ -1,24 +1,9 @@
-def gen_fibon(n):
-    a = 1
-    b = 1
-    output = []
+correct_password = "1234"
 
-    for i in range(n):
-        output.append(a)
-        a,b = b,a+b
-    
-    return output
+name = input("Please enter your name: ")
+password = input("Please enter your password: ")
 
-def gen_fibon_generator(n):
-    a = 1
-    b = 1
+while(password != correct_password):
+    password = input("Wrong password!. Please try again: ")
 
-    for i in range(n):
-        yield a
-        a,b = b,a+b
-
-for number in gen_fibon(10):
-    print(number)
-
-for number in gen_fibon_generator(10):
-    print(number)
+print(f"Hi {name}!. You're log in")
