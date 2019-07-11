@@ -1,19 +1,10 @@
-class Book():
+from book import Book
 
-    def __init__(self, title, author, pages):
-        
-        self.title = title
-        self.author = author
-        self.pages = pages
+b = Book("Game of Thrones", "Martin", 350, "tapa dura")
+a = Book("Harry Potter", "JK Rowling", 700, "tapa blanda")
 
-    def __str__(self):
-        return (f"{self.title} by {self.author}")
-    
-    def __len__(self):
-        return (self.pages)
-    
-    def __del__(self):
-        print("object is deleted")
-
-b = Book("Game of Thrones", "Martin", 350)
+print(b.get_title())
+print(a.num_pages())
+print(a)
 print(len(b))
+print(b.num_pages())
